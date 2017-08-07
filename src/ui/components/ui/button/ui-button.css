@@ -1,0 +1,27 @@
+.ui-button {
+    padding: 21px 40px;
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: 400;
+
+    border: 1px solid #dddfe0;
+    border-radius: 6px;
+    outline: none;
+    vertical-align: middle;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+    -o-transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #333;
+    display: inline-block;
+}

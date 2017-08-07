@@ -1,0 +1,267 @@
+.ui-menu-primary {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+@media screen and (max-width: 999px) {
+    .ui-menu-primary {
+        padding: 0;
+        text-align: center;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .ui-menu-primary_more {
+        padding-right: 0;
+    }
+}
+.ui-menu-primary__button {
+    display: none;
+    width: 24px;
+    height: 20px;
+}
+@media screen and (max-width: 999px) {
+    .ui-menu-primary__button {
+        display: inline-block;
+    }
+}
+.ui-menu-primary__button-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #9299a2;
+}
+.ui-menu-primary__toggle-spacer {
+    display: inline-block;
+    float: right;
+    width: 66px;
+    height: 20px;
+}
+.ui-menu-primary__toggle {
+    position: absolute;
+    display: none;
+    margin-top: 6px;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 17px;
+    user-select: none;
+    cursor: pointer;
+}
+@media screen and (max-width: 999px) {
+    .ui-menu-primary__toggle {
+        position: relative;
+        display: inline-block;
+        right: 0;
+        width: 24px;
+        height: 20px;
+        transition: transform .3s ease;
+    }
+}
+.ui-menu-primary__toggle_more {
+    display: inline-block;
+}
+.ui-menu-primary__toggle-element {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #74a3c7;
+    text-align: justify;
+    transition: background-color 0.3s ease;
+}
+@media screen and (max-width: 999px) {
+    .ui-menu-primary__toggle-element {
+        display: block;
+        margin-bottom: 7px;
+        width: 100%;
+        height: 2px;
+        background-color: #9299a2;
+    }
+    .ui-menu-primary__toggle-element:last-child {
+        margin-bottom: 0;
+    }
+}
+.ui-menu-primary__toggle-element_dark {
+    background-color: #333;
+}
+.ui-menu-primary__toggle:hover .ui-menu-primary__toggle-element {
+    background-color: #366386;
+}
+@media screen and (max-width: 999px) {
+    .ui-menu-primary__toggle:hover .ui-menu-primary__toggle-element {
+        background-color: #535961;
+    }
+}
+@media screen and (max-width: 999px) {
+    .ui-menu-primary__toggle_sidebar-showed {
+        z-index: 1000;
+    }
+}
+@media screen and (max-width: 999px) {
+    .ui-menu-primary__toggle_sidebar-showed.ui-menu-primary__toggle_chat-showed {
+        z-index: 0;
+    }
+}
+@media screen and (max-width: 999px) {
+    .ui-menu-primary__toggle_anonymous {
+        z-index: 0;
+    }
+}
+.ui-menu-primary__toggle_sidebar-showed .ui-menu-primary__toggle-element_white {
+    background-color: white;
+}
+.ui-menu-primary__toggle_sidebar-showed .ui-menu-primary__toggle-element_dark {
+    background-color: #333;
+}
+@media screen and (max-width: 999px) {
+    .ui-menu-primary__toggle_active {
+        width: 24px;
+        height: 24px;
+        z-index: 2000;
+        transform: rotate(45deg);
+    }
+}
+.ui-menu-primary__toggle_active .ui-menu-primary__toggle-element {
+    background-color: #9299a2;
+}
+@media screen and (max-width: 999px) {
+    .ui-menu-primary__toggle_active .ui-menu-primary__toggle-element {
+        display: none;
+        margin-bottom: 0;
+    }
+}
+@media screen and (max-width: 999px) {
+    .ui-menu-primary__toggle_active .ui-menu-primary__toggle-element:first-child,
+    .ui-menu-primary__toggle_active .ui-menu-primary__toggle-element:last-child {
+        display: block;
+    }
+}
+@media screen and (max-width: 999px) {
+    .ui-menu-primary__toggle_active .ui-menu-primary__toggle-element:first-child {
+        display: block;
+        margin-top: 11px;
+        transform: rotate(90deg);
+    }
+}
+@media screen and (max-width: 999px) {
+    .ui-menu-primary__toggle_active .ui-menu-primary__toggle-element:last-child {
+        display: block;
+        margin-top: -2px;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .ui-menu-primary__toggle_main-page {
+        display: none;
+    }
+}
+@media screen and (max-width: 999px) {
+    .ui-menu-primary__list {
+        display: none;
+        margin-right: 0;
+        padding-right: 0;
+        text-align: center;
+    }
+}
+.ui-menu-primary__list_active {
+    height: auto;
+    overflow: visible;
+}
+@media screen and (max-width: 999px) {
+    .ui-menu-primary__list_active {
+        position: fixed;
+        display: block;
+        right: 0;
+        left: 0;
+        height: 100vh;
+        margin-top: 66px;
+        background-color: white;
+        z-index: 1000;
+        overflow: auto;
+    }
+}
+.ui-menu-primary__list_main-page {
+    height: auto;
+}
+.ui-menu-primary__item {
+    display: inline-block;
+    padding: 5px 12px 6px;
+    text-transform: uppercase;
+    position: relative;
+}
+@media screen and (max-width: 999px) {
+    .ui-menu-primary__item {
+        display: block;
+        padding: 24px 18px;
+    }
+}
+.ui-menu-primary__count {
+    box-sizing: border-box;
+    display: inline-block;
+    margin: -4px auto -4px 6px;
+    padding: 3px;
+    min-width: 23px;
+    height: 23px;
+    background: #ffdd2d;
+    border-radius: 23px;
+    color: #333;
+    text-align: center;
+}
+.ui-menu-primary__count-number {
+    display: inline-block;
+    padding: 0 3px;
+}
+.ui-menu-primary__link {
+    display: inline-block;
+    letter-spacing: .9px;
+    color: #74a3c7;
+}
+.ui-menu-primary__link:hover {
+    color: #5b8db3;
+}
+.ui-menu-primary__link_active,
+.ui-menu-primary__link_active:hover {
+    color: #333;
+}
+.ui-menu-primary__link_active {
+    font-weight: 600;
+    letter-spacing: 0.569px;
+}
+@media screen and (min-width: 1480px) {
+    .ui-menu-primary_sidebar-showed {
+        padding-left: 0px;
+        max-width: inherit;
+        min-width: inherit;
+    }
+}
+@media screen and (min-width: 1786px) {
+    .ui-menu-primary_sidebar-showed {
+        max-width: 1200px;
+        min-width: 800px;
+    }
+}
+@media screen and (max-width: 999px) {
+    .ui-menu-primary_active:before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        z-index: 1;
+    }
+}
+.whatsNewCount {
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: 3px;
+    top: -3px;
+    border-radius: 14px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 17px;
+}
