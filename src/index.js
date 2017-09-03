@@ -8,6 +8,8 @@ import Header from './pages/Header.jsx'
 
 import initApp from './app/initApp.jsx'
 
+import 'react-hot-loader/patch';
+
 // reducers
 import application from './app/application/index.js'
 
@@ -30,5 +32,7 @@ function createRoutes (store){
         </div>
     );
 }
+console.log("module.hot")
+console.log(module.hot)
 
 initApp(createRoutes, rootReducer);

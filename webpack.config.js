@@ -1,24 +1,21 @@
 var path = require("path");
+var webpack = require("webpack");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: "./src/index.js",
+    entry: [
+        "webpack-hot-middleware/client?reload=true",
+        "react-hot-loader/patch",
+        "./src/index.js"
+    ],
     output: {
         filename: "bundle.js",
         path: path.resolve(__dirname, "dist")
     },
     watch: true,
-    devtool: "eval",
+    devtool: "source-map",
     module: {
-
         rules: [
-/*            {
-                test: /\.jsx$/,
-                enforce: "pre",
-                loader: 'eslint-loader',
-                include: [
-                    path.resolve(__dirname, 'src')
-                ]
-            },*/
             {
                 rules: [
                     {
@@ -51,7 +48,21 @@ module.exports = {
                     presets: ['es2015', 'react', 'stage-0'],
                     plugins: ['transform-decorators-legacy' ,'transform-runtime']
                 }
+            },
+            {
+                test: /\.jade$/,
+                loader:  'pug-loader',
+                options: {
+                    pretty: true
+                }
             }
         ]
-    }
+    },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin({
+            title: 'index.html',
+            template: path.join('./server/views', 'index.jade')
+        })
+    ]
 };

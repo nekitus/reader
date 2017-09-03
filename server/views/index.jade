@@ -1,5 +1,9 @@
-extends layout
-
-block content
-  .application
-  script(src="bundle.js")
+doctype html
+html
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width,user-scalable=no')
+  body
+    block content
+      .application

@@ -1,13 +1,23 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
+import Canvas from '../ui/components/ui/canvas/Canvas'
+
 class LearningPage extends Component {
+    constructor(props){
+        super(props);
+    }
     render(){
-        return (<div>LearningPage</div>)
+        return (<div>
+            <Canvas weights={this.props.weights}/>
+        </div>)
     }
 }
 
 export default connect(function(state){
-    console.log(state, 'state');
-    return {}
-}, {})(LearningPage)
+    return {
+        weights: state.application.weights
+    }
+}, {
+
+})(LearningPage)

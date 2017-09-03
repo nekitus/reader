@@ -10,9 +10,8 @@ const middlewares = [thunk, promise, multi];
 
 import {getWeights as apiInfoGet} from './api/index.js'
 import {infoGet} from './application/index.js'
-
+import 'react-hot-loader/patch';
 import App from './App.jsx'
-
 import { AppContainer } from 'react-hot-loader'
 
 import {
@@ -21,7 +20,6 @@ import {
     Route,
     Link
 } from 'react-router-dom';
-
 
 
 export default function (createRoutes, rootReducer){
@@ -53,13 +51,7 @@ export default function (createRoutes, rootReducer){
         render(App)
     });
 
-    console.log("sdfcccccc")
-
     if (module.hot) {
-        console.log(module.hot)
-        console.log("sdfsdfsdf")
         module.hot.accept('./App.jsx', () => { render(App) })
     }
 }
-
-console.log("mmodule hot", module.hot);

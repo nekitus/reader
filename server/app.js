@@ -1,6 +1,6 @@
 var express = require('express'),
     path = require('path'),
-    //favicon = require('serve-favicon'),
+    favicon = require('serve-favicon'),
     logger = require('morgan'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser');
@@ -14,17 +14,35 @@ var routes = require('./routes/index');
 
 var app = express();
 
+const isDevelopment = process.argv.indexOf('--development') !== -1;
+
+if(isDevelopment) {
+    const webpack = require('webpack');
+    const webpackConfig = require('../webpack.config');
+    const compiler = webpack(webpackConfig);
+    app.use(require('webpack-dev-middleware')(compiler, {
+        hot: true,
+        inline: true,
+        status: {
+            colors: true
+        }
+    }));
+    app.use(require('webpack-hot-middleware')(compiler))
+} else {
+    app.use(express.static(path.join(__dirname, '../dist')));
+}
+
+
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+//app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(favicon(__dirname + '/public/Google-favicon-2015.png'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../dist')));
 
 app.use('/', routes);
 //app.use('/users', users);

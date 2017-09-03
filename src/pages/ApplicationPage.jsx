@@ -7,6 +7,8 @@ import UIButton from '../ui/components/ui/button/UIButton.jsx'
 import Recognition, {imageCapture} from '../app/recognition/index.js'
 import {setWeight} from '../app/application/index'
 
+//import s from '/Users/nikita/projects/reader/src/app/testing/index.js'
+
 class ApplicationPage extends Component {
      constructor(props) {
          super(props);
