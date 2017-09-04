@@ -22,11 +22,17 @@ export default class Recognition {
 
         if(weight.length) {
             updateWeights(imageData, weight, (value, i) => {
-                if(value) {
-                    const w = Number(weight[i]);
-                    if(w < 4) {
-                        weight[i] = w + value;
+                if (value) {
+                    const w = parseInt(weight[i]);
+                    if (w < 4) {
+                        let sum = w + parseInt(value);
+                        if (!isNaN(sum)) {
+                            weight[i] = sum
+                        } else {
+                            throw new Error("sum is not a number")
+                        }
                     }
+                } else {
                 }
             })
         } else {

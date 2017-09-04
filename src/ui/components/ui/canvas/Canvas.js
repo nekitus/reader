@@ -25,10 +25,12 @@ export default class Canvas extends Component {
         var ctx=c.getContext("2d");
         var imgData=ctx.createImageData(50,50);
         for (let i=0, j = 0;i<imgData.data.length;i+=4, j++) {
-            imgData.data[i+0]= data[j] * 255 / 4;
-            imgData.data[i+1]= data[j] * 255 / 4;
-            imgData.data[i+2]= data[j] * 255 / 4;
-            imgData.data[i+3]= data[j] * 255 / 4;
+            imgData.data[i+0]= (data[j] * -255 / 4) + 255;
+            imgData.data[i+1]= (data[j] * -255 / 4) + 255;
+            imgData.data[i+2]= (data[j] * -255 / 4) + 255;
+            imgData.data[i+3]= 160;//(data[j] * -255 / 4) + 255;
+
+            //imgData.data[i+3]= data[j] * 255 / 4;
         }
         return imgData
     }
