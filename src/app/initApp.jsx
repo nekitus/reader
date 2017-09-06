@@ -15,7 +15,6 @@ import App from './App.jsx'
 import { AppContainer } from 'react-hot-loader'
 
 import {
-    HashRouter,
     BrowserRouter,
     Route,
     Link
@@ -31,7 +30,7 @@ export default function (createRoutes, rootReducer){
         render() {
             return (
                 <Provider store={store}>
-                    <HashRouter
+                    <BrowserRouter
                         children={routes}
                         onUpdate={(e)=> {console.log("router update", e)}}
                     />

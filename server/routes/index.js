@@ -3,8 +3,8 @@ var router = express.Router();
 var mongoose = require('mongoose'); //mongo connection
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Reader' });
+router.get('*', function(req, res) {
+    res.redirect('/');
 });
 
 router.post('/getSymbols', function(req, res) {
