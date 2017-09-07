@@ -22,7 +22,7 @@ export default class Canvas extends Component {
             imgData.data[i]     = color;
             imgData.data[i + 1] = color;
             imgData.data[i + 2] = color;
-            imgData.data[i + 3] = 160;
+            imgData.data[i + 3] = 255;
         }
         ctx.putImageData(imgData, 1, 1);
         return PIXI.Sprite.from(c.toDataURL());
@@ -36,19 +36,21 @@ export default class Canvas extends Component {
             let container = new PIXI.Container();
             const char = this.weightToSprite(weights[i]);
             const title = new PIXI.Text(weights[i].name);
+            const blockHeight = 60;
+            const charPadding = 4;
 
             var graphics = new PIXI.Graphics();
             graphics.beginFill(0xEEEEEE);
-            graphics.drawRect(0, 0, 200, 60);
-
-
-            title.position.x = 60;
-            title.position.y = 10;
+            graphics.drawRect(0, 0, 200, blockHeight);
+            char.position.x = charPadding;
+            char.position.y = charPadding;
+            title.position.x = 75;
+            title.position.y = 14;
             container.addChild(graphics);
             container.addChild(title);
             container.addChild(char);
             container.position.x = 30;
-            container.position.y = (60 * i) + 60;
+            container.position.y = ((blockHeight + 10) * i) + blockHeight;
             app.stage.addChild(container);
         }
     }
